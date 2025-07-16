@@ -1,7 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Clock, Star } from "lucide-react";
+import homeImage from "../assets/home-image.avif";
 
 const Home = () => {
   const features = [
@@ -23,11 +23,11 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-attar-black">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <section className="relative bg-attar-black text-attar-white overflow-hidden">
+        <div className="absolute inset-0 bg-attar-black opacity-70"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
             <motion.div
@@ -36,25 +36,23 @@ const Home = () => {
               transition={{ duration: 0.8 }}
             >
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-attar-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Quality Used & New Cars,
-                <span className="block text-primary-200">Trusted Service</span>
+                <span className="text-attar-red">DRIVE PRESTIGE.</span>
+                <span className="block text-attar-white">DRIVE ATTAR.</span>
               </motion.h1>
 
               <motion.p
-                className="mt-6 text-xl text-primary-100 max-w-2xl"
+                className="mt-6 text-xl text-attar-lightgray max-w-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Discover your perfect vehicle from our extensive collection of
-                quality used and new cars. We provide trusted service and
-                competitive prices to make your car buying experience
-                exceptional.
+                DISCOVER THE NEWEST MODELS. Experience luxury, reliability, and
+                unmatched service with Attar Motors.
               </motion.p>
 
               <motion.div
@@ -65,14 +63,14 @@ const Home = () => {
               >
                 <Link
                   to="/cars"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-attar-red text-attar-white font-semibold rounded-lg hover:bg-attar-black hover:text-attar-red border-2 border-attar-red transition-colors duration-200 shadow-lg hover:shadow-xl"
                 >
                   Browse Cars
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
                 <Link
                   to="/about"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-600 transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-attar-red text-attar-red font-semibold rounded-lg hover:bg-attar-red hover:text-attar-white transition-colors duration-200"
                 >
                   Learn More
                 </Link>
@@ -88,19 +86,19 @@ const Home = () => {
             >
               <div className="relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  src={homeImage}
                   alt="Luxury Car"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-96 object-cover rounded-2xl shadow-2xl border-4 border-attar-gray hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-primary-400 rounded-2xl -z-10"></div>
+              <div className="absolute -bottom-4 -right-5 w-full h-full bg-attar-red rounded-2xl z-0 opacity-80"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-attar-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -109,10 +107,10 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-attar-red mb-4">
               Why Choose Attar Motors?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-attar-lightgray max-w-3xl mx-auto">
               We're committed to providing the best car trading experience with
               quality vehicles and exceptional service.
             </p>
@@ -122,19 +120,19 @@ const Home = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="text-center p-8 rounded-xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300"
+                className="text-center p-8 rounded-xl bg-attar-black hover:bg-attar-gray hover:shadow-lg transition-all duration-300 border-2 border-attar-gray hover:border-attar-red"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-attar-red text-attar-white rounded-full mb-6 border-2 border-attar-black">
                   <feature.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-attar-white mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-attar-lightgray">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -142,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-attar-red text-attar-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,16 +148,16 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Find Your Perfect Car?
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-attar-black">
+              Accelerate Your Lifestyle
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-attar-white mb-8 max-w-2xl mx-auto">
               Browse our extensive collection of quality vehicles and find the
               perfect match for your needs.
             </p>
             <Link
               to="/cars"
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 bg-attar-black text-attar-white font-semibold rounded-lg hover:bg-attar-gray hover:text-attar-red border-2 border-attar-black transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               Start Browsing
               <ArrowRight className="ml-2 h-5 w-5" />

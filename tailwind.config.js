@@ -28,6 +28,13 @@ module.exports = {
           800: "#1e293b",
           900: "#0f172a",
         },
+        attar: {
+          black: "#181818",
+          gray: "#2d2d2d",
+          lightgray: "#bdbdbd",
+          red: "#e74c3c",
+          white: "#fff",
+        },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],

@@ -42,22 +42,22 @@ const CarDetail = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
+      <div className="min-h-screen flex items-center justify-center bg-attar-black">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-attar-red"></div>
       </div>
     );
   }
 
   if (!car) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-attar-black">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-attar-white mb-4">
             Car not found
           </h2>
           <Link
             to="/cars"
-            className="inline-flex items-center text-primary-600 hover:text-primary-700"
+            className="inline-flex items-center text-attar-lightgray hover:text-attar-red hover:underline px-4 py-2 rounded transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Cars
@@ -80,7 +80,7 @@ const CarDetail = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-attar-black py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <motion.div
@@ -91,10 +91,10 @@ const CarDetail = () => {
         >
           <Link
             to="/cars"
-            className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+            className="inline-flex items-center text-attar-lightgray hover:text-attar-red hover:underline px-4 py-2 rounded transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Listings
+            Back to Cars
           </Link>
         </motion.div>
 
@@ -106,7 +106,7 @@ const CarDetail = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Main Image */}
-            <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden mb-4">
+            <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden mb-4 border-4 border-attar-gray">
               <img
                 src={
                   car.images[selectedImage] ||
@@ -118,10 +118,10 @@ const CarDetail = () => {
               {/* Condition Badge */}
               <div className="absolute top-4 right-4">
                 <span
-                  className={`px-3 py-1 text-sm font-semibold rounded-full ${
+                  className={`px-3 py-1 text-sm font-semibold rounded-full shadow-lg border-2 ${
                     car.condition === "new"
-                      ? "bg-green-100 text-green-800"
-                      : "bg-blue-100 text-blue-800"
+                      ? "bg-attar-red text-attar-white border-attar-red shadow-attar-red/30"
+                      : "bg-attar-gray text-attar-white border-attar-gray shadow-attar-gray/30"
                   }`}
                 >
                   {car.condition.toUpperCase()}
@@ -138,8 +138,8 @@ const CarDetail = () => {
                     onClick={() => setSelectedImage(index)}
                     className={`relative h-20 rounded-lg overflow-hidden border-2 transition-all ${
                       selectedImage === index
-                        ? "border-primary-500"
-                        : "border-gray-200 hover:border-gray-300"
+                        ? "border-attar-red"
+                        : "border-attar-gray hover:border-attar-red"
                     }`}
                   >
                     <img
@@ -161,24 +161,24 @@ const CarDetail = () => {
           >
             {/* Header */}
             <div className="mb-6">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold text-attar-white mb-2">
                 {car.make} {car.model}
               </h1>
-              <p className="text-xl text-gray-600 mb-4">
+              <p className="text-xl text-attar-lightgray mb-4">
                 {car.year} •{" "}
                 {car.condition.charAt(0).toUpperCase() + car.condition.slice(1)}
               </p>
-              <div className="text-3xl font-bold text-primary-600">
+              <div className="text-3xl font-bold text-attar-red">
                 ${car.price.toLocaleString()}
               </div>
             </div>
 
             {/* Description */}
             <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-attar-white mb-3">
                 Description
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-attar-lightgray leading-relaxed">
                 {car.description ||
                   `This ${car.year} ${car.make} ${car.model} is a ${
                     car.condition
@@ -192,7 +192,7 @@ const CarDetail = () => {
 
             {/* Specifications */}
             <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-attar-white mb-4">
                 Specifications
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -202,14 +202,16 @@ const CarDetail = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center p-4 bg-white rounded-lg shadow-sm"
+                    className="flex items-center p-4 bg-attar-gray rounded-lg shadow-sm border-2 border-attar-black hover:border-attar-red hover:shadow-lg transition-all duration-200"
                   >
-                    <div className="flex items-center justify-center w-10 h-10 bg-primary-100 text-primary-600 rounded-lg mr-4">
+                    <div className="flex items-center justify-center w-10 h-10 bg-attar-black text-attar-red rounded-lg mr-4 border-2 border-attar-gray">
                       <spec.icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">{spec.label}</div>
-                      <div className="font-semibold text-gray-900">
+                      <div className="text-sm text-attar-lightgray">
+                        {spec.label}
+                      </div>
+                      <div className="font-semibold text-attar-white">
                         {spec.value}
                       </div>
                     </div>
@@ -223,17 +225,17 @@ const CarDetail = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-primary-50 rounded-lg p-6"
+              className="bg-attar-red rounded-lg p-6"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-attar-white mb-3">
                 Interested in this vehicle?
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-attar-white mb-4">
                 Contact us for more information or to schedule a test drive.
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 bg-attar-black text-attar-white font-semibold rounded-lg hover:bg-attar-gray hover:text-attar-red border-2 border-attar-black transition-colors duration-200"
               >
                 Contact Us
               </Link>

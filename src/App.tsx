@@ -9,6 +9,7 @@ import About from "./pages/About";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import { AuthProvider } from "./contexts/AuthContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 const pageVariants = {
   initial: {
@@ -35,6 +36,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-gray-50">
           <Navbar />
           <AnimatePresence mode="wait">
@@ -96,7 +98,7 @@ function App() {
                 }
               />
               <Route
-                path="/admin/login"
+                path="/login"
                 element={
                   <motion.div
                     initial="initial"
@@ -110,7 +112,7 @@ function App() {
                 }
               />
               <Route
-                path="/admin/dashboard"
+                path="/dashboard"
                 element={
                   <motion.div
                     initial="initial"

@@ -12,11 +12,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
   console.warn("See SUPABASE_SETUP.md for detailed instructions.");
 }
 
-export const supabase = createClient(
-  supabaseUrl || "https://wuahibwkvwtwoyyuonjk.supabase.co",
-  supabaseAnonKey ||
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind1YWhpYndrdnd0d295eXVvbmprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIxMDE4MDcsImV4cCI6MjA2NzY3NzgwN30.Op_26Ogfc58vOfYZIipOfLPWHOD1zANPyWvDlVdld2Y"
-);
+export const supabase = createClient(supabaseUrl || "", supabaseAnonKey || "");
 
 // Database types
 export interface Car {
@@ -34,6 +30,7 @@ export interface Car {
   images: string[];
   created_at: string;
   updated_at: string;
+  car_type_id?: number;
 }
 
 export interface AdminUser {

@@ -66,9 +66,9 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-attar-black">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
+      <section className="bg-attar-black text-attar-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               About Attar Motors
             </h1>
-            <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+            <p className="text-xl text-attar-lightgray max-w-3xl mx-auto">
               Your trusted partner in quality used and new car trading. We're
               committed to providing exceptional service and the best vehicles
               for our customers.
@@ -88,7 +88,7 @@ const About = () => {
       </section>
 
       {/* Company Description */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-attar-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -97,10 +97,10 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-attar-white mb-6">
                 Our Story
               </h2>
-              <div className="space-y-4 text-lg text-gray-600">
+              <div className="space-y-4 text-lg text-attar-lightgray">
                 <p>
                   Founded with a passion for quality vehicles and exceptional
                   customer service, Attar Motors has been serving the community
@@ -133,16 +133,16 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Attar Motors Showroom"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl border-4 border-attar-red"
               />
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-primary-400 rounded-2xl -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-attar-red rounded-2xl -z-10 opacity-80"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-attar-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -151,10 +151,10 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-attar-white mb-4">
               Get in Touch
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-attar-lightgray max-w-3xl mx-auto">
               We'd love to hear from you. Contact us for any questions about our
               vehicles or services.
             </p>
@@ -168,12 +168,12 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="text-center p-8 rounded-xl bg-attar-gray hover:bg-attar-gray hover:shadow-lg transition-all duration-300 border-2 border-attar-gray hover:border-attar-red"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 text-primary-600 rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-attar-red text-attar-white rounded-full mb-6">
                   <info.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-attar-white mb-4">
                   {info.title}
                 </h3>
                 <div className="space-y-2">
@@ -182,12 +182,12 @@ const About = () => {
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-gray-600 hover:text-primary-600 transition-colors"
+                          className="text-attar-lightgray hover:text-attar-red transition-colors"
                         >
                           {detail}
                         </a>
                       ) : (
-                        <p className="text-gray-600">{detail}</p>
+                        <p className="text-attar-lightgray">{detail}</p>
                       )}
                     </div>
                   ))}
