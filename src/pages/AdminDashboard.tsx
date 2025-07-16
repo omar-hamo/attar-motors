@@ -61,7 +61,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate("/admin/login");
+      navigate("/login");
       return;
     }
     if (!loading && user) {
